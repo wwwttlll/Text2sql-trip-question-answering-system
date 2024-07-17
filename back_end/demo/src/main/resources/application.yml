@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    # 上线用相对路径
+    url: jdbc:sqlite::resource:db/geo.db
+    # 开发用绝对路径
+    # url: jdbc:sqlite:D:\code\java\ing\demo\src\main\resources\db\geo.db
+
+# 设置端口号
+server:
+  port: 8081
+  address: 0.0.0.0
+
+# 关闭自动驼峰命名规则映射
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+
+# token
+token:
+  privateKey: 'fdasfgdsagaxgsregdfdjyghjfhebfdgwe45ygrfbsdfshfdsag'
+  # token生成时间超过yangToken变oldToken 访问刷新
+  yangToken: 10000000
+  # token过期时长 一秒=1000
+  oldToken: 30000000
